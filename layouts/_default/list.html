@@ -23,14 +23,12 @@
     {{ else }}
       {{ range .Pages }}
         <li>
-          <div>
-            <span class="date">
-              {{- partial "date.html" .Date -}}
-            </span>
-            <span>
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </span>
-          </div>
+          <span class="date">
+            [{{- partial "date.html" .Date -}}]
+          </span>
+          <span>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </span>
         </li>
       {{ end }}
     {{ end }}

@@ -2,5 +2,25 @@
 	{{ if .Params.showTitle | default true }}
 		<h1>{{ .Title }}</h1>
 	{{ end }}
+
+	{{ if (.Params.showDate | default true) }}
+    <p class="date">
+      <span title='{{ i18n "date" }}'> </span>
+      {{- partial "date.html" .Date -}}
+    </p>
+  {{ end }}
+
 	<div>{{ .Content }}</div>
 </article>
+
+{{ if .Params.tags }}
+  <div class="line"></div>
+  <p class="articleTagsContainer">
+    <i class="inline-icon">
+      {{ partial "svg" "tag-multiple" }}
+    </i>
+    {{ range sort .Params.tags }}
+      <a href="/tags/{{ . | urlize }}">#{{ . }}</a>
+    {{ end }}
+  </p>
+{{ end }}
