@@ -1,0 +1,3 @@
+{{ $theme := resources.Get "js/theme.js" | js.Build }}
+{{ $bundle := slice $theme | resources.Concat "bundle.js" | resources.Minify }}
+<script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>

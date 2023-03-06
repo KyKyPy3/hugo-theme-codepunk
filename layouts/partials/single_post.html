@@ -1,0 +1,6 @@
+<article class="card single">
+	{{ if .Params.showTitle | default true }}
+		<h1>{{ .Title }}</h1>
+	{{ end }}
+	<div>{{ .Content }}</div>
+</article>

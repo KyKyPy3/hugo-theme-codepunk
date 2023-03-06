@@ -1,0 +1,75 @@
+html, body {
+  font-family: $global-font-family;
+  font-weight: $global-font-weight;
+  font-display: swap;
+  font-size: $global-font-size;
+  text-rendering: optimizeLegibility;
+
+  line-height: $global-line-height;
+  width:100%;
+  
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;    
+}
+
+/* scrollbar, only support webkit */
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color;
+
+  &:hover {
+    background-color: $scrollbar-hover-color;
+  }
+}
+
+body {
+  background-color: $global-background-color;
+  color: $global-font-color;
+  @include overflow-wrap(break-word);
+  min-height: 100vh;
+
+  scrollbar-color: auto;
+
+  [data-theme=dark] & {
+    background-color: $global-background-color-dark;
+    color: $global-font-color-dark;
+  }
+}
+
+a, a::before, a::after {
+  color: $global-link-color;
+  text-decoration: none;
+  border-bottom: 2px solid $global-link-border;
+  padding-left: 3px;
+  padding-right: 3px;
+
+  [data-theme=dark] & {
+    color: $global-link-color-dark;
+  }
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+
+  [data-theme=dark] & {
+    color: white;
+    background-color: $global-link-border;
+  }
+}
+
+#content {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+
+.date {
+  color: #bababa;
+  font-size: .9em;
+}

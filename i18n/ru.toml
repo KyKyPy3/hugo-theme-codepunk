@@ -1,0 +1,17 @@
+[licensedBy]
+other = "Лицензировано под лицензией"
+
+[poweredBy]
+other = "Запущено с помощью"
+
+[madeWith]
+other = "Разработано с"
+
+[by]
+other = "под вдохновением"
+
+[404message]
+other = "This is not the page you were looking for"
+
+[tagsColumn]
+other = "Все теги"

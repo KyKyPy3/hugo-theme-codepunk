@@ -1,0 +1,29 @@
+// ========== Global ========== //
+// Font and Line Height
+$global-font-family: "JetBrainsMono", system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif !default;
+$global-font-size: 16px;
+$global-font-weight: 400;
+$global-line-height: 1.5rem;
+
+// ========== Scrollbar ========== //
+// Color of the scrollbar
+$scrollbar-color: #87878d !default;
+
+// Color of the hover scrollbar
+$scrollbar-hover-color: #a9a9b3 !default;
+// ========== Scrollbar ========== //
+
+// Color of the background
+$global-background-color: white !default;
+$global-background-color-dark: #353535 !default;
+
+// Color of the text
+$global-font-color: #161209 !default;
+$global-font-color-dark: white !default;
+
+// Color of the link
+$global-link-color: black !default;
+$global-link-color-dark: white !default;
+
+$global-link-border: #22c55e !default;
+$global-link-border-dark: #22c55e !default;

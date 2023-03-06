@@ -1,0 +1,28 @@
+<head>
+  {{- /* Meta */ -}}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+  <meta name="robots" content="noodp" />
+
+
+  {{- /* Title */ -}}
+  {{- $title := ( .Title ) -}} 
+  {{- $siteTitle := ( .Site.Title ) -}}
+  {{- if .IsHome -}}
+	  <title>{{ $siteTitle }}</title>
+  {{- else -}}
+	  <title>{{ $title }} &ndash; {{ $siteTitle }}</title>
+	{{- end -}}
+
+  {{- /* Favicon */ -}}
+  {{- partial "head/favicons.html" . -}}
+
+  {{- /* SEO */ -}}
+  {{- partial "head/seo.html" . -}}
+
+  {{- /* Assets */ -}}
+  {{- partial "head/assets.html" . -}}
+</head>

@@ -1,0 +1,24 @@
+<footer class="footer">
+  <div class="footerInner">
+    <div class="footerLine"></div>
+    <p>
+      <small>
+        {{ now.Format "2006" }}
+        &copy;
+        {{ i18n "licensedBy" | safeHTML }}
+        <a href="{{ .Site.Params.licenselink }}" target="_blank">{{ .Site.Params.license }}</a>
+      </small>
+      <small>|</small>
+      <small>
+        {{ i18n "madeWith" | safeHTML }}
+        <span class="with-love">&hearts;</span>
+        {{ i18n "by" | safeHTML }}
+        <a href="{{ .Site.Params.homepage }}" target="_blank">{{ .Site.Params.author }}</a>
+      </small>
+      <small>|</small>
+      <small>
+        {{ i18n "poweredBy" | safeHTML }} <a href="https://gohugo.io/" target="_blank">Hugo</a>
+      </small>
+    </p>
+  </div>
+</footer>

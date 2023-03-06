@@ -1,0 +1,4 @@
+@mixin overflow-wrap($value) {
+  word-wrap: $value;
+  overflow-wrap: $value;
+}

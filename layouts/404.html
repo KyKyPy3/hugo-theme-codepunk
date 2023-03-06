@@ -1,0 +1,11 @@
+{{- define "title" }}
+  {{- i18n "pageNotFound" | printf "404 %v" }} - {{ .Site.Title -}}
+{{- end -}}
+
+{{- define "content" }}
+  <div id="content-404">
+    <h1>
+      {{ i18n "404message" }}
+    </h1>
+  </div>
+{{- end -}}

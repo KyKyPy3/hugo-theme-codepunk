@@ -1,0 +1,44 @@
+footer {
+  margin-top: 15px;
+  padding: 5px;
+
+  align-items: center;
+  text-align: center;
+}
+
+.footerInner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #a9a9b3;
+  }
+}
+
+.footerLine {
+  border-top-width: 3px;
+  border-top-style: dotted;
+  border-top-color: black;
+  margin-bottom: 5px;
+
+  [data-theme=dark] & {
+    border-color: rgb(172, 166, 166);
+  }
+}
+
+.with-love {
+  color: red;
+  display: inline-block;
+  animation: beat 1.33s ease-in-out infinite;
+}
+
+@keyframes beat {
+  0%, 50%, 100% { transform: scale(1, 1); }
+  30%, 80% { transform: scale(0.92, 0.95); }
+}

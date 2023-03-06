@@ -1,0 +1,34 @@
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.111.1"
+
+[menu]
+  [[menu.header]]
+    identifier = "resume"
+    name = "Resume"
+    weight = 1
+    url = "resume"
+  [[menu.header]]
+    identifier = "posts"
+    name = "Posts"
+    weight = 2
+    url = "posts"
+  [[menu.header]]
+    identifier = "tags"
+    name = "Tags"
+    weight = 3
+    url = "tags"
+  [[menu.header]]
+    identifier = "about"
+    name = "About"
+    weight = 4
+    url = "about"
+
+[params]
+  user = "thecodepunk"
+  hostname = "dev"
+  author = "Efremenko Roman"
+  homepage = "https://github.com/KyKyPy3"
+  license = "MIT"
+  licenselink = "https://github.com/KyKyPy3/hugo-theme-codepunk/blob/main/LICENSE"
