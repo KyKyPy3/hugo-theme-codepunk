@@ -1,5 +1,5 @@
 {{ define "content" }}
-  <h2>
+  <h1 class="title">
     {{ $title := .Title }}
     {{ $section := .Section | humanize }}
 
@@ -12,7 +12,7 @@
     {{ else }}
       {{ if and (eq $section "Tags") (ne $section $title) }}{{ i18n "tagColumn" }} #{{ end }}{{ $title }}
     {{ end }}
-  </h2>
+  </h1>
   <ul class="list">
     {{ if and (eq $section "Tags") (eq $section $title) }}
       {{ range (sort .Pages "Title") }}

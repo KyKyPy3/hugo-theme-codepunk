@@ -1,0 +1,13 @@
+{{ $res := resources.Get "css/style.scss" }}
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
+{{ $style := $res | resources.ToCSS $options }}
+{{- if .Site.Params.fingerprint -}}
+    {{- $style = $style | resources.Fingerprint -}}
+    <link
+        rel="stylesheet"
+        href="{{ $style.RelPermalink }}"
+        {{- if .Site.Params.enableSRI }} integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous"{{- end -}}
+    />
+{{- else  -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{- end -}}

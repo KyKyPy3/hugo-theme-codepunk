@@ -1,12 +1,13 @@
 footer {
   margin-top: 15px;
+  margin-bottom: 15px;
   padding: 5px;
 
   align-items: center;
   text-align: center;
 }
 
-.footerInner {
+.footer-inner {
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
@@ -17,11 +18,23 @@ footer {
   }
 
   a {
-    color: #a9a9b3;
+    color: #5e5d57;
+
+    [data-theme=dark] & {
+      color: #a9a9b3;
+    }
+
+    &:hover {
+      color: black;
+
+      [data-theme=dark] & {
+        color: white;
+      }
+    }
   }
 }
 
-.footerLine {
+.footer-line {
   border-top-width: 3px;
   border-top-style: dotted;
   border-top-color: black;
@@ -30,6 +43,18 @@ footer {
   [data-theme=dark] & {
     border-color: rgb(172, 166, 166);
   }
+}
+
+.footer-content {
+  display: grid;
+
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.footer-delimeter {
+  display: block;
 }
 
 .with-love {
@@ -41,4 +66,17 @@ footer {
 @keyframes beat {
   0%, 50%, 100% { transform: scale(1, 1); }
   30%, 80% { transform: scale(0.92, 0.95); }
+}
+
+@media screen and ($phone) {
+  .footer-content {
+    grid-auto-flow: row;
+    display: grid;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .footer-delimeter {
+    display: none;
+  }
 }

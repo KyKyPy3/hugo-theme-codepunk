@@ -1,0 +1,49 @@
+{{ $integrity := .Integrity }}
+{{ $build := .Build | default false }}
+{{ $minify := .Minify | default true }}
+
+{{ $src := .Source }}
+{{ if .Sources }}
+    {{ $resources := slice }}
+    {{ range .Sources }}
+        {{ $resource := resources.Get . | js.Build }}      
+        {{ $resources = $resources | append $resource }}
+    {{ end }}
+    {{ $src = $resources | resources.Concat "bundle.js" | js.Build (dict "minify" true)  }}
+{{ else }}
+    {{ if (urls.Parse $src).Host | not }}
+        {{ $src = resources.Get $src }}
+    {{ else }}
+        {{ $src = resources.GetRemote $src }}
+    {{ end }}
+
+    {{ if $build }}
+        {{ $src = $src | js.Build }}
+    {{ end }}
+
+    {{ if $minify }}
+        {{ $src = $src | resources.Minify }}
+    {{ end }}
+{{ end }}
+
+{{ with .Fingerprint }}
+    {{ $src = $src | fingerprint . }}
+    {{ $integrity = $src.Data.Integrity }}
+{{ end }}
+
+{{- $src = $src.RelPermalink -}}
+
+{{- $attrs := printf `src="%v"` $src -}}
+{{- if .Crossorigin -}}
+    {{- $attrs = ` crossorigin="anonymous"` | add $attrs -}}
+{{- end -}}
+{{- with $integrity -}}
+    {{- $attrs = printf ` integrity="%v"` . | add $attrs -}}
+{{- end -}}
+{{- if .Async -}}
+    {{- $attrs = " async" | add $attrs -}}
+{{- end -}}
+{{- if .Defer -}}
+    {{- $attrs = " defer" | add $attrs -}}
+{{- end -}}
+<script type="text/javascript" {{ $attrs | safeHTMLAttr }}></script>

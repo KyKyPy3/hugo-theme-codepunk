@@ -1,0 +1,28 @@
+.about {
+  h2 {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+  
+.about-header {
+  margin: 0px;
+
+  padding-left: 15px;
+}
+
+.interests {
+  li {
+    line-height: 32px;
+  }
+}
+
+.interest-favorite {
+  color: red;
+  font-size: 18px;
+
+  [data-theme=dark] & {
+    color: #d8b541;
+  }
+}

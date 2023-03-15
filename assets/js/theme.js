@@ -50,5 +50,3 @@ if (themeToggle) {
   // localStorage.removeItem("theme");
 }
 detectOSColorTheme();
-
-console.log(themeToggle);

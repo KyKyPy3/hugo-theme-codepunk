@@ -1,4 +1,5 @@
 .header {
+  min-height: 32px;
   background-color: #242629;
 
   margin-bottom: 15px;
@@ -9,7 +10,7 @@
   align-items: center;
 }
 
-.headerInner {
+.header-inner {
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
@@ -22,39 +23,59 @@
   justify-content: space-between;
 }
 
-.terminal {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border: none;
+.right-header {
+  display: flex;
+  flex-direction: row;
 }
 
-.terminal:hover {
-  background-color: white;
-  color: $global-link-color;
+.sun-icon {
+  display: none;
+  fill: white;
+  color: white;
 
   [data-theme=dark] & {
-    background-color: #242629;
-    color: $global-link-color-dark;
+    display: block;
   }
 }
 
-.cursor {
-  font-weight: bold;
-  animation: blink 1s step-end infinite;
-}
+.moon-icon {
+  display: block;
+  fill: white;
+  color: white;
 
-@keyframes blink{
-  0%, 100%{
-    color: transparent;
-  }
-
-  50%{
-    color: #22c55e;
+  [data-theme=dark] & {
+    display: none;
   }
 }
 
-.headerLinks {
+.theme-toggle {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 2px solid rgb(80, 77, 77);
+}
+
+.logo {
+  text-align: center;
+
+  a {
+    display: block;
+    border: none;
+  }
+
+  a:hover {
+    background-color: #fdf4e7;
+  
+    [data-theme=dark] & {
+      background-color: #353535;
+    }
+  }
+}
+
+#clock {
+  color: #22c55e;
+}
+
+.header-links {
   ul {
     list-style-type: none;
     margin: 0;
@@ -124,8 +145,48 @@
   top: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .headerLinks {
+.social-icons {
+  text-align: center;
+
+  .social-icons-list {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0px;
+    text-align: center;
+
+    .social-icon {
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0 6px;
+
+      svg {
+        height: 28px;
+        width: 28px;
+        fill: black;
+
+        [data-theme=dark] & {
+          fill: white;
+        }
+      }
+
+      a {
+        border: none;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+@media screen and ($phone) {
+  .logo img {
+    width: 98vw;
+  }
+
+  .header-links {
     width: 100%;
     position: fixed;
     top: 35px;
@@ -137,12 +198,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 
     ul {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      li {
+        margin: 10px;
+      }
     }
   }
 

@@ -1,4 +1,0 @@
-{{ $res := resources.Get "css/style.scss" }}
-{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-{{ $style := $res | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" />

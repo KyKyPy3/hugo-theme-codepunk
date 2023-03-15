@@ -1,21 +1,51 @@
 <article class="card single">
 	{{ if .Params.showTitle | default true }}
-		<h1>{{ .Title }}</h1>
+		<h1 class="title">{{ .Title }}</h1>
 	{{ end }}
 
-	{{ if (.Params.showDate | default true) }}
-    <p class="date">
-      <span title='{{ i18n "date" }}'> </span>
-      {{- partial "date.html" .Date -}}
-    </p>
+  {{ if .Params.showMeta | default true }}
+    <div class="meta">
+      {{ if (.Params.showDate | default true) }}
+        <span class="date">
+          <i class="inline-icon">
+            {{ partial "svg" "calendar-range" }}
+          </i>
+          {{- partial "date.html" .PublishDate -}}
+        </span>
+        &nbsp;
+      {{ end }}
+      
+      {{ if (.Params.showWordCount | default true) }}
+        <span class="date">
+          <i class="inline-icon">
+            {{ partial "svg" "edit" }}
+          </i>
+          {{ $.WordCount }}
+        </span>
+        &nbsp;
+      {{ end }}
+
+      {{ if (.Params.showReadingTime | default true) }}
+        <span class="date">
+          <i class="inline-icon">
+            {{ partial "svg" "time" }}
+          </i>
+          {{ $.ReadingTime }}
+        </span>
+      {{ end }}
+    </div>
   {{ end }}
 
-	<div>{{ .Content }}</div>
+  <aside>
+    {{ .TableOfContents }}
+  </aside>
+
+	<div class="card-content">{{ .Content }}</div>
 </article>
 
 {{ if .Params.tags }}
   <div class="line"></div>
-  <p class="articleTagsContainer">
+  <p class="article-tags-container">
     <i class="inline-icon">
       {{ partial "svg" "tag-multiple" }}
     </i>

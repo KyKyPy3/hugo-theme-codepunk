@@ -1,0 +1,5 @@
+{{- $fingerprint := .Site.Params.fingerprint -}}
+
+{{- /* Internal script */ -}}
+{{ $scripts := slice "js/theme.js" "js/clock.js" "js/scrolltop.js" }}
+{{- dict "Sources" $scripts "Fingerprint" $fingerprint "Build" true | partial "script.html" -}}

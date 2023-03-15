@@ -1,14 +1,8 @@
 <header class="header">
-  <div class="headerInner">
-    <div>
-      <a href="{{ .Site.BaseURL }}" class="terminal">
-        {{ .Site.Params.user }}@{{ .Site.Params.hostname }}: ~/$
-      </a>
-      <span class="cursor font-mono font-bold">|</span>
-    </div>
+  <div class="header-inner">
     <input class="side-menu" type="checkbox" id="side-menu"/>
     <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-    <nav class="headerLinks">
+    <nav class="header-links">
       <ul>
         {{ range .Site.Menus.header }}
           <li>
@@ -19,5 +13,28 @@
         {{ end }}
       </ul>
     </nav>
+    <div class="right-header">
+      <div class="theme-toggle">
+        {{ partial "svg" "sun" }}
+        {{ partial "svg" "moon" }}
+      </div>
+      <div id="clock"></div>
+    </div>
   </div>
 </header>
+<div class="logo">
+  <a href="{{ .Site.BaseURL }}"><img src="/logo.png"></a>
+</div>
+<section class="social-icons">
+  <ul class="social-icons-list">
+    {{ range .Site.Params.SocialIcons }}
+      <li class="social-icon">
+          <a target="_blank" href="{{ .url }}" {{ if .rel }}rel="{{ .rel }}"{{ end }}>
+            <i class="inline-icon">
+              {{ partial "svg" .name }}
+            </i>
+          </a>
+      </li>
+    {{ end }}
+  </ul>
+</section>
