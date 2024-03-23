@@ -142,92 +142,12 @@ code {
   }
 }
 
-.meta {
-  background-color: #f0e6ad;
-  opacity: 0.7;
-  padding: 5px;
-  fill: #222;
-
-  [data-theme=dark] & {
-    background-color: #242629;
-    fill: #bababa;
-  }
-
-  .date {
-    color: #222;
-    font-size: .9em;
-  
-    [data-theme=dark] & {
-      color: #bababa;
-    }
-  }
-}
-
-#TableOfContents {
-  margin: 10px 2px 40px;
-  opacity: 0.7;
-  border: 1px dashed #dcdcdc;
-  background-color: #fffef4;
-
-  [data-theme=dark] & {
-    border: 1px dashed #656363;
-
-    background-color: #282828;
-  }
-
-   li {
-    list-style-type: "⁃ ";
-    line-height: 32px;
-   }
-}
-
-.article-tags-container {
-  margin: 15px 0;
-
-  a {
-    color: #5e5d57;
-
-    &:hover {
-      color: black;
-    }
-  }
-
-  [data-theme=dark] & {
-    a {
-      color: #a9a9b3;
-
-      &:hover {
-        color: white;
-      }
-    }
-  }
-}
-
-.tag-multiple-icon {
-  fill: black;
-
-  [data-theme=dark] & {
-    fill: white;
-  }
-}
-
 .inline-icon {
   display: inline-block;
   position: relative;
   // fill: silver;
   height: 1.35rem;
   width: 1.35rem;
-}
-
-.post-line {
-  border-top-width: 3px;
-  border-top-style: dotted;
-  border-top-color: black;
-  margin-bottom: 5px;
-
-  [data-theme=dark] & {
-    border-color: rgb(172, 166, 166);
-  }
 }
 
 .back-to-top {
@@ -249,22 +169,11 @@ code {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-
-  .back-to-top-on {
-    bottom: 30px;
-  }
 }
 
-// .card-content {
-//   h2 {
-//     border-color: rgb(253, 109, 207);
-//     border-width: 4px;
-//     border-left-style: solid;
-//     padding-left: 10px;
-//     padding-top: 0.5rem;
-//     padding-bottom: 0.5rem;
-//   }
-// }
+.back-to-top-on {
+  bottom: 30px;
+}
 
 .social-icons {
   text-align: center;
@@ -280,7 +189,6 @@ code {
       box-sizing: border-box;
       display: inline-block;
       margin: 0 6px;
-      // fill: white;
 
       svg {
         height: 28px;
@@ -296,6 +204,21 @@ code {
       }
     }
   }
+}
+
+.block-header {
+  font-size:8px;
+  font-family: monospace;
+  line-height: 1;
+  display: inline-block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-top: 32px;
+}
+
+.center {
+  width: 100%;
+  text-align: center;
 }
 
 @media screen and ($tablet) {

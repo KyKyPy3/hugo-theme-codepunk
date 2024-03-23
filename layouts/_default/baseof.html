@@ -8,10 +8,12 @@
     </div>
     {{- partial "footer.html" . -}}
 
+    {{ if .Params.showScrollTop | default true }}
     <div class="back-to-top">
       <i class="arrow-up">↑</i>
       <span id="scrollpercent"><span>0</span>%</span>
     </div>
+    {{ end }}
 
     {{- partial "assets.html" . -}}
     {{- partial "analitics.html" . -}}

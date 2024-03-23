@@ -21,6 +21,8 @@ window.addEventListener('scroll', function () {
   count.innerHTML = Math.round((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
 });
 
-top.addEventListener('click', function () {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-});
+if (top) {
+  top.addEventListener('click', function () {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+}

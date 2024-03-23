@@ -1,47 +1,47 @@
-<article class="card single">
-	{{ if .Params.showTitle | default true }}
-		<h1 class="title">{{ .Title }}</h1>
-	{{ end }}
+{{ if .Params.showTitle | default true }}
+    <h1 class="title">{{ .Title }}</h1>
+{{ end }}
 
-  {{ if .Params.showMeta | default true }}
-    <div class="meta">
-      {{ if (.Params.showDate | default true) }}
-        <span class="date">
-          <i class="inline-icon">
-            {{ partial "svg" "calendar-range" }}
-          </i>
-          {{- partial "date.html" .PublishDate -}}
-        </span>
-        &nbsp;
-      {{ end }}
-      
-      {{ if (.Params.showWordCount | default true) }}
-        <span class="date">
-          <i class="inline-icon">
-            {{ partial "svg" "edit" }}
-          </i>
-          {{ $.WordCount }}
-        </span>
-        &nbsp;
-      {{ end }}
+{{ if .Params.showMeta | default true }}
+  <div class="meta">
+    {{ if (.Params.showDate | default true) }}
+      <span class="date">
+        <i class="inline-icon">
+          {{ partial "svg" "calendar-range" }}
+        </i>
+        {{- partial "date.html" .PublishDate -}}
+      </span>
+      &nbsp;
+    {{ end }}
 
-      {{ if (.Params.showReadingTime | default true) }}
-        <span class="date">
-          <i class="inline-icon">
-            {{ partial "svg" "time" }}
-          </i>
-          {{ $.ReadingTime }}
-        </span>
-      {{ end }}
-    </div>
-  {{ end }}
+    {{ if (.Params.showWordCount | default true) }}
+      <span class="date">
+        <i class="inline-icon">
+          {{ partial "svg" "edit" }}
+        </i>
+        {{ $.WordCount }}
+      </span>
+      &nbsp;
+    {{ end }}
 
-  <aside>
-    {{ .TableOfContents }}
-  </aside>
+    {{ if (.Params.showReadingTime | default true) }}
+      <span class="date">
+        <i class="inline-icon">
+          {{ partial "svg" "time" }}
+        </i>
+        {{ $.ReadingTime }}
+      </span>
+    {{ end }}
+  </div>
+{{ end }}
 
-	<div class="card-content">{{ .Content }}</div>
-</article>
+{{ if .Params.showTableOfContents | default false }}
+<aside>
+  {{ .TableOfContents }}
+</aside>
+{{ end }}
+
+<div class="{{ .Params.class }} content">{{ .Content }}</div>
 
 {{ if .Params.tags }}
   <div class="post-line"></div>
