@@ -8,21 +8,21 @@
     {{ end }}
 
     {{ if and (eq $section "Tags") (eq $section $title) }}
-      {{ i18n "tagsColumn" }}
+      # {{ i18n "tagsColumn" }}
     {{ else }}
-      {{ if and (eq $section "Tags") (ne $section $title) }}{{ i18n "tagColumn" }} #{{ end }}{{ $title }}
+      {{ if and (eq $section "Tags") (ne $section $title) }}{{ i18n "tagColumn" }} # {{ end }}{{ $title }}
     {{ end }}
   </h1>
   <ul class="list">
     {{ if and (eq $section "Tags") (eq $section $title) }}
       {{ range (sort .Pages "Title") }}
-        <li>
-          <a href="{{ .Permalink }}">#{{ .Title }}</a>
+        <li class="first">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
         </li>
       {{ end }}
     {{ else }}
       {{ range .Pages }}
-        <li>
+        <li class="second">
           <span class="date">
             [{{- partial "date.html" .Date -}}]
           </span>

@@ -62,7 +62,7 @@ a, a::before, a::after {
 
 a:hover {
   background-color: $global-link-border;
-  color: black;
+  color: white;
 
   [data-theme=dark] & {
     color: white;
@@ -76,6 +76,61 @@ a:hover {
   margin-right: auto;
   padding: 15px;
   padding-top: 0px;
+}
+
+code {
+  font-size: 0.8em;
+}
+
+.photo {
+    text-align: center;
+
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 1px solid;
+    }
+  }
+
+.cow {
+  font-size:26px;
+  font-family: monospace;
+  line-height: 1;
+  display: inline-block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0 auto
+}
+
+.main-contacts {
+  font-size:16px;
+  font-family: monospace;
+  line-height: 1;
+  display: inline-block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0 auto;
+}
+
+.main-idea {
+  font-size:10px;
+  font-family: monospace;
+  line-height: 1;
+  display: inline-block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 20px auto;
+}
+
+.list {
+  .first {
+    list-style-type: "⇒ ";
+  }
+
+  .second {
+    list-style-type: "* ";
+  }
 }
 
 .list .date {
@@ -111,15 +166,19 @@ a:hover {
 #TableOfContents {
   margin: 10px 2px 40px;
   opacity: 0.7;
-  border: 1px solid #cecece;
-  border-radius: 8px;
-  background-color: #f7f1d2;
+  border: 1px dashed #dcdcdc;
+  background-color: #fffef4;
 
   [data-theme=dark] & {
-    border: 1px solid white;
+    border: 1px dashed #656363;
 
-    background-color: #222;
+    background-color: #282828;
   }
+
+   li {
+    list-style-type: "⁃ ";
+    line-height: 32px;
+   }
 }
 
 .article-tags-container {
@@ -160,7 +219,7 @@ a:hover {
   width: 1.35rem;
 }
 
-.line {
+.post-line {
   border-top-width: 3px;
   border-top-style: dotted;
   border-top-color: black;
@@ -239,8 +298,71 @@ a:hover {
   }
 }
 
+@media screen and ($tablet) {
+  .main-contacts {
+    font-size:14px;
+    font-family: monospace;
+    line-height: 1.5;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0 auto;
+  }
+
+  .main-idea {
+    font-size:8px;
+    font-family: monospace;
+    line-height: 1;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 20px auto;
+  }
+}
+
 @media screen and ($phone) {
   .back-to-top {
     right: 8px;
+  }
+
+  .photo {
+    text-align: center;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 1px solid;
+    }
+  }
+
+  .cow {
+    font-size:20px;
+    font-family: monospace;
+    line-height: 1;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0 auto
+  }
+
+  .main-contacts {
+    font-size:9px;
+    font-family: monospace;
+    line-height: 1;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0 auto;
+  }
+
+  .main-idea {
+    font-size:5px;
+    font-family: monospace;
+    line-height: 1;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 20px auto;
   }
 }

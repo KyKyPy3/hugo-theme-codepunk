@@ -11,3 +11,9 @@
 {{- else  -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 {{- end -}}
+
+{{ $syntax_dark_css := resources.Get "css/syntax_dark.css" | minify }}
+{{ $syntax_light_css := resources.Get "css/syntax_light.css" | minify }}
+
+<link rel="preload stylesheet" as="style" href="{{ $syntax_dark_css.Permalink }}" />
+<link rel="preload stylesheet" as="style" href="{{ $syntax_light_css.Permalink }}" />

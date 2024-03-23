@@ -130,7 +130,7 @@
   display: none;
 }
 
-.side-menu:checked ~ .headerLinks {
+.side-menu:checked ~ .header-links {
   max-height: 100%;
 }
 .side-menu:checked ~ .hamb .hamb-line {
@@ -183,7 +183,7 @@
 
 @media screen and ($phone) {
   .logo img {
-    width: 98vw;
+    width: 380px;
   }
 
   .header-links {

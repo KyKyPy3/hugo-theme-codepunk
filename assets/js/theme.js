@@ -7,8 +7,8 @@
  */
 const themeToggle = document.querySelector(".theme-toggle");
 const chosenTheme = window.localStorage && window.localStorage.getItem("theme");
-const chosenThemeIsDark = chosenTheme == "dark";
-const chosenThemeIsLight = chosenTheme == "light";
+const chosenThemeIsDark = chosenTheme === "dark";
+const chosenThemeIsLight = chosenTheme === "light";
 
 // Detect the color scheme the operating system prefers.
 function detectOSColorTheme() {
@@ -21,6 +21,25 @@ function detectOSColorTheme() {
   } else {
     document.documentElement.setAttribute("data-theme", "light");
   }
+
+  setSyntaxDark(chosenThemeIsDark);
+}
+
+function getStyleSheet(file_name) {
+  for (var i = 0; i < document.styleSheets.length; i++) {
+    var sheet = document.styleSheets[i];
+    if (sheet.href.includes(file_name)) {
+      return sheet;
+    }
+  }
+}
+
+function setSyntaxDark(isDark) {
+  sheet_light = getStyleSheet("syntax_light")
+  sheet_dark = getStyleSheet("syntax_dark")
+
+  sheet_light.disabled = isDark ? true : false
+  sheet_dark.disabled = isDark ? false : true
 }
 
 // Switch the theme.
@@ -44,9 +63,7 @@ if (themeToggle) {
   window
     .matchMedia("(prefers-color-scheme: light)")
     .addEventListener("change", (e) => e.matches && detectOSColorTheme());
-
-  detectOSColorTheme();
 } else {
-  // localStorage.removeItem("theme");
+  localStorage.removeItem("theme");
 }
 detectOSColorTheme();

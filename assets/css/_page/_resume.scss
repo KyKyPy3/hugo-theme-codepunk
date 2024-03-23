@@ -1,11 +1,18 @@
 .resume-skills {
+  .hdr {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.17em;
+    width: 200px;
+  }
+
   display: flex;
   flex-direction: row;
   padding: 0 10px;
-  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.university-icon, .work-icon, .school-icon {
+.university-icon, .work-icon, .school-icon, .certificate-icon {
   width: 24px;
   height: 24px;
   position: absolute;
@@ -42,10 +49,20 @@
   }
 }
 
+.resume-header {
+    font-size:8px;
+    font-family: monospace;
+    line-height: 1;
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-top: 12px;
+}
+
 .expirience {
   list-style: none;
   padding-left: 25px;
-  margin-top: 32px;
+  margin-top: 22px;
 
   > li {
     border-left: 2px solid black;
@@ -76,6 +93,10 @@
       left: -2px;
     }
 
+    &:last-of-type::after {
+      height: 0px;
+    }
+
     [data-theme=dark] & {
       border-left: 2px solid white;
 
@@ -94,6 +115,7 @@
 .achive {
   margin-top: 5px;
   list-style: circle;
+  line-height: 32px;
 }
 
 .exp-sub {
@@ -130,10 +152,14 @@
 }
 
 @media screen and ($phone) {
+  .resume-header {
+    font-size:6px;
+  }
+
   .resume-skills {
     display: flex;
     flex-direction: column;
     padding: 0 10px;
-    justify-content: space-between;
+    margin-bottom: 15px;
   }
 }
