@@ -22,22 +22,20 @@
     </div>
   </div>
 </header>
-{{ $path := .Path }}
-{{ if and (ne $path "/home") }}
-  <div class="logo">
-    <a href="{{ .Site.BaseURL }}"><img src="/logo.png"></a>
-  </div>
-  <section class="social-icons">
-    <ul class="social-icons-list">
-      {{ range .Site.Params.SocialIcons }}
-      <li class="social-icon">
-        <a target="_blank" href="{{ .url }}" {{ if .rel }}rel="{{ .rel }}"{{ end }}>
-          <i class="inline-icon">
-            {{ partial "svg" .name }}
-          </i>
-        </a>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-{{ end }}
+
+<div class="logo">
+  <a href="{{ .Site.BaseURL }}"><img src="/logo.png"></a>
+</div>
+<section class="social-icons">
+  <ul class="social-icons-list">
+    {{ range .Site.Params.SocialIcons }}
+    <li class="social-icon">
+      <a target="_blank" href="{{ .url }}" {{ if .rel }}rel="{{ .rel }}"{{ end }}>
+        <i class="inline-icon">
+          {{ partial "svg" .name }}
+        </i>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
