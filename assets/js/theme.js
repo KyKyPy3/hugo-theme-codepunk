@@ -23,6 +23,9 @@ function detectOSColorTheme() {
   }
 
   setSyntaxDark(chosenThemeIsDark);
+
+  var theme = chosenThemeIsDark ? 'noborder_dark' : 'light';
+  document.querySelector('script[src="https://giscus.app/client.js"]').setAttribute('data-theme', theme);
 }
 
 function getStyleSheet(file_name) {
