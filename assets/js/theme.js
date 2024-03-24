@@ -25,7 +25,10 @@ function detectOSColorTheme() {
   setSyntaxDark(chosenThemeIsDark);
 
   var theme = chosenThemeIsDark ? 'noborder_dark' : 'light';
-  document.querySelector('script[src="https://giscus.app/client.js"]').setAttribute('data-theme', theme);
+  var giscuss = document.querySelector('script[src="https://giscus.app/client.js"]');
+  if (giscuss) {
+    giscuss.setAttribute('data-theme', theme);
+  }
 }
 
 function getStyleSheet(file_name) {
