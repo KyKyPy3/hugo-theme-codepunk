@@ -23,7 +23,7 @@
   </div>
 </header>
 {{ $path := .Path }}
-{{ if .Params.showPageHeader | default true }}
+{{ if and (ne $path "/home") }}
   <div class="logo">
     <a href="{{ .Site.BaseURL }}"><img src="/logo.png"></a>
   </div>
