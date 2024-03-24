@@ -82,7 +82,12 @@ code {
   font-size: 0.8em;
 }
 
+.theme-toggle {
+  cursor: pointer;
+}
+
 .photo {
+    margin-top: 40px;
     text-align: center;
 
     img {
@@ -208,7 +213,6 @@ code {
   display: inline-block;
   white-space: pre-wrap;
   word-break: break-word;
-  margin-top: 32px;
 }
 
 .center {
@@ -270,7 +274,7 @@ code {
   }
 
   .main-idea {
-    font-size: 5px !important;
+    font-size: 4.5px !important;
     margin: 20px auto !important;
   }
 }
