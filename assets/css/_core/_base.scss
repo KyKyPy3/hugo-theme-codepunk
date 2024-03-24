@@ -114,13 +114,8 @@ code {
 }
 
 .main-idea {
-  font-size:10px;
-  font-family: monospace;
-  line-height: 1;
-  display: inline-block;
-  white-space: pre-wrap;
-  word-break: break-word;
-  margin: 20px auto;
+  font-size: 10px !important;
+  margin: 20px auto !important;
 }
 
 .list {
@@ -233,13 +228,8 @@ code {
   }
 
   .main-idea {
-    font-size:8px;
-    font-family: monospace;
-    line-height: 1;
-    display: inline-block;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 20px auto;
+    font-size: 8px !important;
+    margin: 20px auto !important;
   }
 }
 
@@ -280,12 +270,7 @@ code {
   }
 
   .main-idea {
-    font-size:5px;
-    font-family: monospace;
-    line-height: 1;
-    display: inline-block;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 20px auto;
+    font-size: 5px !important;
+    margin: 20px auto !important;
   }
 }
