@@ -112,10 +112,25 @@
   }
 }
 
+.intro {
+  line-height: 32px;
+}
+
 .achive {
   margin-top: 5px;
   list-style: circle;
   line-height: 32px;
+}
+
+.tech-stack {
+  font-weight: bold;
+  margin-right: 10px;
+
+  color: rgb(173, 101, 101);
+
+  [data-theme=dark] & {
+    color: yellow;
+  }
 }
 
 .exp-sub {
