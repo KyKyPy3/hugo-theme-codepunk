@@ -36,6 +36,21 @@
     line-height: 32px;
    }
 }
+.content .highlight .line {
+  padding-left: 8px;
+}
+
+.content h3 {
+  color: #d63864;
+
+  [data-theme=dark] & {
+    color: #22c55e;
+  }
+}
+
+.content h2 {
+  padding-top: 15px;
+}
 
 .article-tags-container {
   margin: 15px 0;
