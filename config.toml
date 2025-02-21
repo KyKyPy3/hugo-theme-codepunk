@@ -1,7 +1,7 @@
 [module]
   [module.hugoVersion]
     extended = true
-    min = "0.111.1"
+    min = "0.143.1"
 
 [menu]
   [[menu.header]]

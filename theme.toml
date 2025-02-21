@@ -16,7 +16,7 @@ tags = [
 features = [
   "blog",
 ]
-min_version = "0.111.1"
+min_version = "0.143.1"
 
 [author]
   name = "Efremenko Roman"
