@@ -11,7 +11,7 @@ other = "Разработано с"
 other = "под вдохновением"
 
 [404message]
-other = "This is not the page you were looking for"
+other = "Это не та страница, которую вы искали."
 
 [tagsColumn]
 other = "Все теги"

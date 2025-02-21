@@ -1,19 +1,23 @@
-{{ $res := resources.Get "css/style.scss" }}
-{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction)) }}
-{{ $style := $res | resources.ToCSS $options }}
-{{- if .Site.Params.fingerprint -}}
-    {{- $style = $style | resources.Fingerprint -}}
-    <link
-        rel="stylesheet"
-        href="{{ $style.RelPermalink }}"
-        {{- if .Site.Params.enableSRI }} integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous"{{- end -}}
-    />
-{{- else  -}}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-{{- end -}}
-
-{{ $syntax_dark_css := resources.Get "css/syntax_dark.css" | minify }}
-{{ $syntax_light_css := resources.Get "css/syntax_light.css" | minify }}
+{{ $res := resources.Get "css/style.scss" }} {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" (not
+hugo.IsProduction)) }} {{ $style := $res | css.Sass $options }} {{- if .Site.Params.fingerprint -}} {{- $style = $style
+| resources.Fingerprint -}}
+<link
+  rel="stylesheet"
+  href="{{ $style.RelPermalink }}"
+  {{-
+  if
+  .Site.Params.enableSRI
+  }}
+  integrity="{{ $style.Data.Integrity }}"
+  crossorigin="anonymous"
+  {{-
+  end
+  -}}
+/>
+{{- else -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+{{- end -}} {{ $syntax_dark_css := resources.Get "css/syntax_dark.css" | minify }} {{ $syntax_light_css := resources.Get
+"css/syntax_light.css" | minify }}
 
 <link rel="preload stylesheet" as="style" href="{{ $syntax_dark_css.Permalink }}" />
 <link rel="preload stylesheet" as="style" href="{{ $syntax_light_css.Permalink }}" />
