@@ -60,6 +60,11 @@
   background-color: transparent;
 }
 
+.content .highlight pre {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 .content table {
   display: block;
   width: 100%;
@@ -77,9 +82,18 @@
     background-color: #fffef4;
     border-top: 1px solid rgba(209, 217, 224, 0.7);
 
+    [data-theme=dark] & {
+      background-color: #282828;
+      border: 1px solid #656363;
+    }
+
     th {
       padding: 6px 13px;
       border: 1px solid rgb(209, 217, 224);
+
+      [data-theme=dark] & {
+        background-color: #282828;
+      }
     }
   }
 }
@@ -89,9 +103,18 @@
     background-color: #fffef4;
     border-top: 1px solid rgba(209, 217, 224, 0.7);
 
+    [data-theme=dark] & {
+      background-color: #282828;
+      border: 1px solid #656363;
+    }
+
     td {
       padding: 6px 13px;
       border: 1px solid rgb(209, 217, 224);
+
+      [data-theme=dark] & {
+        background-color: #282828;
+      }
     }
   }
 }
