@@ -56,6 +56,20 @@
   line-height: 1.8;
 }
 
+.content > p > code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: rgba(129, 139, 152, 0.12);
+  border-radius: 6px;
+
+  [data-theme=dark] & {
+    background-color: #c7c4bc;
+    color: black;
+  }
+}
+
 .content li {
   line-height: 1.8;
 }
