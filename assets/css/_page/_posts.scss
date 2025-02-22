@@ -56,6 +56,46 @@
   line-height: 1.8;
 }
 
+.content .chroma .err {
+  background-color: transparent;
+}
+
+.content table {
+  display: block;
+  width: 100%;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  font-variant: tabular-nums;
+}
+
+.content thead {
+  display: table-header-group;
+  vertical-align: middle;
+
+  tr {
+    background-color: #fffef4;
+    border-top: 1px solid rgba(209, 217, 224, 0.7);
+
+    th {
+      padding: 6px 13px;
+      border: 1px solid rgb(209, 217, 224);
+    }
+  }
+}
+
+.content tbody {
+  tr {
+    background-color: #fffef4;
+    border-top: 1px solid rgba(209, 217, 224, 0.7);
+
+    td {
+      padding: 6px 13px;
+      border: 1px solid rgb(209, 217, 224);
+    }
+  }
+}
+
 .content > p > code {
   padding: .2em .4em;
   margin: 0;
