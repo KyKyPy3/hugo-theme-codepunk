@@ -178,6 +178,18 @@
   }
 }
 
+[data-theme=dark] {
+  .post-image-dark {
+    display: none;
+  }
+}
+
+body:not[data-theme=dark] {
+  .post-image-light {
+    display: none;
+  }
+}
+
 .book-preview {
   text-align: center;
 
