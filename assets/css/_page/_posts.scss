@@ -179,14 +179,30 @@
 }
 
 [data-theme=dark] {
-  .post-image-dark {
+  .post-image-light {
     display: none;
+  }
+
+  .post-image-dark {
+    img {
+      height: 400px;
+    }
+
+    margin: 0px;
   }
 }
 
-body:not[data-theme=dark] {
-  .post-image-light {
+[data-theme=light] {
+  .post-image-dark {
     display: none;
+  }
+
+  .post-image-light {
+    img {
+      height: 400px;
+    }
+
+    margin: 0px;
   }
 }
 
