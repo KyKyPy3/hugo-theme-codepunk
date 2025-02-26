@@ -186,6 +186,10 @@
   .post-image-dark {
     img {
       height: 400px;
+
+      @media screen and ($phone) {
+        height: 150px;
+      }
     }
 
     margin: 0px;
@@ -200,6 +204,10 @@
   .post-image-light {
     img {
       height: 400px;
+
+      @media screen and ($phone) {
+        height: 150px;
+      }
     }
 
     margin: 0px;
