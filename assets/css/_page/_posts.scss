@@ -185,10 +185,10 @@
 
   .post-image-dark {
     img {
-      height: 400px;
+      width: 58vw;
 
       @media screen and ($phone) {
-        height: 150px;
+        width: 90vw;
       }
     }
 
@@ -203,10 +203,10 @@
 
   .post-image-light {
     img {
-      height: 400px;
+      width: 58vw;
 
       @media screen and ($phone) {
-        height: 150px;
+        width: 90vw;
       }
     }
 
