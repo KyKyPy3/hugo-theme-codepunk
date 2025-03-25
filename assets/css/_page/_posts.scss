@@ -187,7 +187,7 @@
     img {
       width: 58vw;
 
-      &.small {
+      &:has(.small) {
         width: 24vw;
       }
 
@@ -209,7 +209,7 @@
     img {
       width: 58vw;
 
-      &.small {
+      &:has(.small) {
         width: 24vw;
       }
 
