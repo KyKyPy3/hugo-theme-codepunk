@@ -187,16 +187,17 @@
     img {
       width: 58vw;
 
-      &:has(.small) {
-        width: 24vw;
-      }
-
       @media screen and ($phone) {
         width: 90vw;
       }
     }
 
+    text-align: center;
     margin: 0px;
+
+    &.small img {
+      width: 24vw !important;
+    }
   }
 }
 
@@ -209,15 +210,16 @@
     img {
       width: 58vw;
 
-      &:has(.small) {
-        width: 24vw;
-      }
-
       @media screen and ($phone) {
         width: 90vw;
       }
     }
 
+    &.small img {
+      width: 24vw !important;
+    }
+
+    text-align: center;
     margin: 0px;
   }
 }
