@@ -187,6 +187,10 @@
     img {
       width: 58vw;
 
+      &.small {
+        width: 24vw;
+      }
+
       @media screen and ($phone) {
         width: 90vw;
       }
@@ -204,6 +208,10 @@
   .post-image-light {
     img {
       width: 58vw;
+
+      &.small {
+        width: 24vw;
+      }
 
       @media screen and ($phone) {
         width: 90vw;
