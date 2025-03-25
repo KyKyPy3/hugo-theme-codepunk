@@ -196,7 +196,15 @@
     margin: 0px;
 
     &.small img {
-      width: 24vw !important;
+      width: 40vw;
+
+      @media screen and ($tablet) {
+        width: 50vw;
+      }
+
+      @media screen and ($phone) {
+        width: 90vw;
+      }
     }
   }
 }
@@ -216,7 +224,15 @@
     }
 
     &.small img {
-      width: 24vw !important;
+      width: 40vw;
+
+      @media screen and ($tablet) {
+        width: 50vw;
+      }
+
+      @media screen and ($phone) {
+        width: 90vw;
+      }
     }
 
     text-align: center;
